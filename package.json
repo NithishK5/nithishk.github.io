@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "build": "npm run static && cross-env NODE_ENV=production vite-ssg build && cp _dist_redirects dist/_redirects",
-    "dev": "vite --port 3333 --open",
+    "dev": "vite --host",
     "preview": "vite preview",
     "static": "rimraf temp && degit antfu/static temp --force",
     "build-and-preview": "npm run build && npm run preview",
