@@ -6,7 +6,7 @@ import MarkdownIt from 'markdown-it'
 import type { FeedOptions, Item } from 'feed'
 import { Feed } from 'feed'
 
-const DOMAIN = 'https://shivamkhattar.com'
+const DOMAIN = 'https://nithishk.com'
 const AUTHOR = {
   name: 'Shivam Khattar',
   email: 'shivamkhattar1@gmail.com',
@@ -28,8 +28,8 @@ async function buildBlogRSS() {
   const options = {
     title: 'Shivam Khattar',
     description: 'Shivam Khattar\'s Website',
-    id: 'https://shivamkhattar.com/',
-    link: 'https://shivamkhattar.com/',
+    id: 'https://nithishk.com/',
+    link: 'https://nithishk.com/',
     copyright: '',
     feedLinks: {
       json: 'https://shivamkhattar.com/feed.json',
