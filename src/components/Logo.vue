@@ -3,7 +3,7 @@
 
 <template>
   <svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
-    <title>Shivam Khattar</title>
+    <title>Nithish Kumar Megarajan</title>
     <g>
       <path
         stroke="white" stroke-width="2.5" stroke-linecap="round"

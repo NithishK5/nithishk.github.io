@@ -38,16 +38,23 @@ const { y: scroll } = useWindowScroll()
           <span class="lt-md:hidden">Expertise</span>
           <div i-material-symbols:work-outline class="md:hidden" />
         </RouterLink>
-        <RouterLink to="/posts" title="Blog">
+        <!-- <RouterLink to="/posts" title="Blog">
           <span class="lt-md:hidden">Blog</span>
           <div i-ri-article-line md:hidden />
-        </RouterLink>
-        <a href="https://github.com/iamkhattar" target="_blank" title="GitHub" class="lt-md:hidden">
+        </RouterLink> -->
+        <a href="https://github.com/NithishK5" target="_blank" title="GitHub" class="lt-md:hidden">
           <div i-uil-github-alt />
         </a>
-        <a href="https://www.linkedin.com/in/iamkhattar/" target="_blank" title="Linkedin" class="lt-md:hidden">
+        <a href="https://www.linkedin.com/in/nithish-kumar-megarajan-2a17b31b4/" target="_blank" title="Linkedin" class="lt-md:hidden">
           <div i-uil-linkedin-alt />
         </a>
+        <a href="mailto:nithishkmegaraj05@gmail.com" title="Gmail" class="mail-send">
+          <div span op75 i-simple-icons-gmail />
+        </a>
+        <a href="/public/CV.pdf" target="_blank" title="Resume" class="lt-md:hidden">
+          <div i-uil-file-alt /> <!-- Assuming you have an icon for the resume -->
+        </a>
+
         <ToggleTheme />
       </div>
     </nav>

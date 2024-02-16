@@ -14,4 +14,7 @@ Find me on
 <p flex="~ gap-3 wrap" class="mt--2!">
   <a href="https://github.com/NithishK5" target="_blank"><span op75 i-simple-icons-github /> GitHub</a>
   <a href="https://www.linkedin.com/in/nithish-kumar-megarajan-2a17b31b4/" target="_blank"><span op75 i-simple-icons-linkedin/> LinkedIn</a>
+  <a href="mailto:nithishkmegaraj05@gmail.com" class="mail-send">
+          <div span op75 i-simple-icons-gmail /> Gmail
+        </a>
 </p>
