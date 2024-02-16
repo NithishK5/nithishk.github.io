@@ -1,7 +1,7 @@
 ---
-title: Notes - Shivam Khattar
+title: Notes - Nithish Kumar Megarajan
 plum: true
-display: ''
+display: ""
 ---
 
 <SubNav />

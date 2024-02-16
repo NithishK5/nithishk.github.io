@@ -1,17 +1,17 @@
 ---
-title: Shivam Khattar
-description: Shivam Khattar's Portfolio
-image: https://shivamkhattar/avatar.jpeg
+title: Nithish Kumar Megarajan
+description: Nithish Kumar's Portfolio
+# image: https://shivamkhattar/avatar.jpeg
 plum: true
 ---
 
-As a passionate software engineer dedicated to crafting cutting-edge solutions, I specialize in developing robust
-libraries and frameworks. With a keen focus on enhancing the quality of life for fellow engineers, my mission is to
-streamline development processes, boost productivity, and foster a culture of excellence within the tech community.
-My expertise encompasses developing in languages like Java and Go, as well as utilizing cutting-edge technologies such
-as AWS, Docker, and Kubernetes. Additionally, I specialize in implementing CI/CD pipelines to optimize development workflows.
+My earliest memories are entwined with the fascinating world of computers. The sheer power they wielded in simplifying complex tasks sparked a curiosity within my young mind, embarking me on an accelerated journey where I outshone my contemporaries. As the years rolled by, this juvenile curiosity evolved into an inexhaustible quest for understanding, propelling me towards the academic study of Software Engineering. Recognizing the vast potential encapsulated within the domain of computing, I decided to weave my career around this enchanting field.
 
-Driven by a commitment to enhancing the quality of life for engineers, I focus on delivering reusable solutions that not
-only solve immediate challenges but also lay the groundwork for future scalability and innovation. Whether it's developing
-solutions on Kubernetes for seamless deployment and scaling, or leveraging serverless technologies to create consistent
-development environments, I thrive on crafting tools that empower engineering teams to excel.
+Presently, as a final year student at the prestigious University of Strathclyde, I am still driven by my insatiable curiosity, finding profound satisfaction in expanding my understanding of the very technology that ignited my passion. This odyssey, from an intrigued youngster to a passionate professional-in-making, shapes my enduring affinity for computers and fuels my aspirations in this vibrant digital universe. This narrative is not merely an 'About Me' for my portfolio, it's a testament to a dream that sprung from a childhood fascination and grew into a promising career pathway.
+
+Find me on
+
+<p flex="~ gap-3 wrap" class="mt--2!">
+  <a href="https://github.com/NithishK5" target="_blank"><span op75 i-simple-icons-github /> GitHub</a>
+  <a href="https://www.linkedin.com/in/nithish-kumar-megarajan-2a17b31b4/" target="_blank"><span op75 i-simple-icons-linkedin/> LinkedIn</a>
+</p>
