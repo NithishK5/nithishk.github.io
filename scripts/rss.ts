@@ -8,8 +8,8 @@ import { Feed } from 'feed'
 
 const DOMAIN = 'https://nithishk.com'
 const AUTHOR = {
-  name: 'Shivam Khattar',
-  email: 'shivamkhattar1@gmail.com',
+  name: 'Nithish Kumar Megarajan',
+  email: 'nithishkmegaraj05@gmail.com',
   link: DOMAIN,
 }
 const markdown = MarkdownIt({
@@ -26,15 +26,15 @@ async function buildBlogRSS() {
   const files = await fg('pages/posts/*.md')
 
   const options = {
-    title: 'Shivam Khattar',
-    description: 'Shivam Khattar\'s Website',
+    title: 'Nithish Kumar Megarajan',
+    description: 'Nithish\'s Website',
     id: 'https://nithishk.com/',
     link: 'https://nithishk.com/',
     copyright: '',
     feedLinks: {
-      json: 'https://shivamkhattar.com/feed.json',
-      atom: 'https://shivamkhattar.com/feed.atom',
-      rss: 'https://shivamkhattar.com/feed.xml',
+      json: 'https://nithishk.com/feed.json',
+      atom: 'https://nithishk.com/feed.atom',
+      rss: 'https://nithishk.com/feed.xml',
     },
   }
   const posts: any[] = (
@@ -71,8 +71,8 @@ async function buildBlogRSS() {
 
 async function writeFeed(name: string, options: FeedOptions, items: Item[]) {
   options.author = AUTHOR
-  options.image = 'https://shivamkhattar.com/avatar.jpeg'
-  options.favicon = 'https://shivamkhattar.com/logo.png'
+  options.image = 'https://nithishk.com/avatar.jpeg'
+  options.favicon = 'https://nithishk.com/logo.png'
 
   const feed = new Feed(options)
 
