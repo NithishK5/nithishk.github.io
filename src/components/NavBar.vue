@@ -51,7 +51,7 @@ const { y: scroll } = useWindowScroll()
         <a href="mailto:nithishkmegaraj05@gmail.com" title="Gmail" class="mail-send">
           <div span op75 i-simple-icons-gmail />
         </a>
-        <a href="/public/CV.pdf" target="_blank" title="Resume" class="lt-md:hidden">
+        <a href="/CV.pdf" target="_blank" title="Resume" class="lt-md:hidden">
           <div i-uil-file-alt /> <!-- Assuming you have an icon for the resume -->
         </a>
 
