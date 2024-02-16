@@ -41,47 +41,49 @@
   "node_modules/vue-router-better-scroller/dist/index.mjs": [],
   "node_modules/vue-router/dist/vue-router.mjs": [],
   "pages/[...404].md": [
-    "/assets/_...404_-pPjolKTJ.js"
+    "/assets/_...404_-vJ1OltIu.js"
   ],
   "pages/experience.md": [
-    "/assets/experience-Lf2wrbgD.js",
+    "/assets/experience-C-OJbFfD.js",
     "/assets/experience-R3tHoPVm.css"
   ],
   "pages/expertise.md": [
-    "/assets/expertise-uOCQRjsJ.js",
-    "/assets/expertise-g-cM9is8.css"
+    "/assets/expertise-m-XZBIdN.js"
   ],
   "pages/index.md": [],
+  "pages/projects.md": [
+    "/assets/projects-fzQUmX4k.js"
+  ],
   "src/App.vue?vue&type=script&setup=true&lang.ts": [],
   "src/components/Footer.vue": [],
   "src/components/ListExperiences.vue": [
-    "/assets/experience-Lf2wrbgD.js",
+    "/assets/experience-C-OJbFfD.js",
     "/assets/experience-R3tHoPVm.css"
   ],
   "src/components/ListExperiences.vue?vue&type=script&setup=true&lang.ts": [
-    "/assets/experience-Lf2wrbgD.js",
+    "/assets/experience-C-OJbFfD.js",
     "/assets/experience-R3tHoPVm.css"
   ],
   "src/components/ListExperiences.vue?vue&type=style&index=0&scoped=740d5d97&lang.css": [
-    "/assets/experience-Lf2wrbgD.js",
+    "/assets/experience-C-OJbFfD.js",
     "/assets/experience-R3tHoPVm.css"
   ],
   "src/components/ListProjects.vue": [
-    "/assets/expertise-uOCQRjsJ.js",
-    "/assets/expertise-g-cM9is8.css"
+    "/assets/ListProjects-Ru8yZwpC.js",
+    "/assets/ListProjects-g-cM9is8.css"
   ],
   "src/components/ListProjects.vue?vue&type=script&setup=true&lang.ts": [
-    "/assets/expertise-uOCQRjsJ.js",
-    "/assets/expertise-g-cM9is8.css"
+    "/assets/ListProjects-Ru8yZwpC.js",
+    "/assets/ListProjects-g-cM9is8.css"
   ],
   "src/components/ListProjects.vue?vue&type=style&index=0&scoped=1ce4a17f&lang.css": [
-    "/assets/expertise-uOCQRjsJ.js",
-    "/assets/expertise-g-cM9is8.css"
+    "/assets/ListProjects-Ru8yZwpC.js",
+    "/assets/ListProjects-g-cM9is8.css"
   ],
   "src/components/Logo.vue": [],
   "src/components/NavBar.vue": [],
   "src/components/NavBar.vue?vue&type=script&setup=true&lang.ts": [],
-  "src/components/NavBar.vue?vue&type=style&index=0&scoped=ca0861cd&lang.css": [],
+  "src/components/NavBar.vue?vue&type=style&index=0&scoped=e60b8855&lang.css": [],
   "src/components/Plum.vue?vue&type=script&setup=true&lang.ts": [],
   "src/components/ToggleTheme.vue?vue&type=script&setup=true&lang.ts": [],
   "src/components/WrapperPost.vue?vue&type=script&setup=true&lang.ts": [],

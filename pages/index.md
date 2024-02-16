@@ -1,7 +1,7 @@
 ---
 title: Nithish Kumar Megarajan
 description: Nithish Kumar's Portfolio
-# image: https://shivamkhattar/avatar.jpeg
+image: https://nithishk/avatar.jpeg
 plum: true
 ---
 
