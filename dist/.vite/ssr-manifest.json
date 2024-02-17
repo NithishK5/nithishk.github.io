@@ -41,46 +41,46 @@
   "node_modules/vue-router-better-scroller/dist/index.mjs": [],
   "node_modules/vue-router/dist/vue-router.mjs": [],
   "pages/[...404].md": [
-    "/assets/_...404_-vJ1OltIu.js"
+    "/assets/_...404_-ejCzwgo3.js"
   ],
   "pages/experience.md": [
-    "/assets/experience-C-OJbFfD.js",
+    "/assets/experience-lBMvinAW.js",
     "/assets/experience-R3tHoPVm.css"
   ],
   "pages/expertise.md": [
-    "/assets/expertise-m-XZBIdN.js"
+    "/assets/expertise-Fw_B7pLC.js"
   ],
   "pages/index.md": [],
   "pages/projects.md": [
-    "/assets/projects-fzQUmX4k.js"
+    "/assets/projects-_jqeVAGe.js"
   ],
   "src/App.vue?vue&type=script&setup=true&lang.ts": [],
-  "src/components/Footer.vue": [],
   "src/components/ListExperiences.vue": [
-    "/assets/experience-C-OJbFfD.js",
+    "/assets/experience-lBMvinAW.js",
     "/assets/experience-R3tHoPVm.css"
   ],
   "src/components/ListExperiences.vue?vue&type=script&setup=true&lang.ts": [
-    "/assets/experience-C-OJbFfD.js",
+    "/assets/experience-lBMvinAW.js",
     "/assets/experience-R3tHoPVm.css"
   ],
   "src/components/ListExperiences.vue?vue&type=style&index=0&scoped=740d5d97&lang.css": [
-    "/assets/experience-C-OJbFfD.js",
+    "/assets/experience-lBMvinAW.js",
     "/assets/experience-R3tHoPVm.css"
   ],
   "src/components/ListProjects.vue": [
-    "/assets/ListProjects-Ru8yZwpC.js",
+    "/assets/ListProjects-f8c9TXiB.js",
     "/assets/ListProjects-g-cM9is8.css"
   ],
   "src/components/ListProjects.vue?vue&type=script&setup=true&lang.ts": [
-    "/assets/ListProjects-Ru8yZwpC.js",
+    "/assets/ListProjects-f8c9TXiB.js",
     "/assets/ListProjects-g-cM9is8.css"
   ],
   "src/components/ListProjects.vue?vue&type=style&index=0&scoped=1ce4a17f&lang.css": [
-    "/assets/ListProjects-Ru8yZwpC.js",
+    "/assets/ListProjects-f8c9TXiB.js",
     "/assets/ListProjects-g-cM9is8.css"
   ],
   "src/components/Logo.vue": [],
+  "src/components/Logo.vue?vue&type=style&index=0&scoped=5207b5c3&lang.css": [],
   "src/components/NavBar.vue": [],
   "src/components/NavBar.vue?vue&type=script&setup=true&lang.ts": [],
   "src/components/NavBar.vue?vue&type=style&index=0&scoped=e60b8855&lang.css": [],
