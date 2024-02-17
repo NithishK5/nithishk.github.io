@@ -45,7 +45,7 @@ projects:
       icon: "i-ion:school"
     - role: "Central Board of Secondary Education"
       link: "https://www.vijayvidyalaya.com/cmp-dharmapuri-cbse.html"
-      company: "The Heritage School"
+      company: "Sri Vijay Vidyashram CBSE School"
       timePeriod: "Apr 10 - Apr 16"
       location: "Dharmapuri, India"
       icon: "i-ion:school"
