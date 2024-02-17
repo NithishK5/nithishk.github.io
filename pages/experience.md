@@ -1,5 +1,5 @@
 ---
-title: Experience - Shivam Khattar
+title: Experience - Nithish K Megarajan
 display: Experience
 description: My career path and education
 plum: true

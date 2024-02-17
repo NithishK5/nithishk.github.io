@@ -1,5 +1,5 @@
 ---
-title: Expertise - Shivam Khattar
+title: Expertise - Nithish K Megarajan
 display: Expertise
 description: My career path and education
 plum: true
