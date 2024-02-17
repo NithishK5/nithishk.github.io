@@ -4,7 +4,7 @@ Welcome to the GitHub repository for my personal website. This site serves as a 
 
 Access
 
-The website is live and can be visited at nithishk.com.
+The website is live and can be visited at https://nithishk.com.
 
 License
 
