@@ -28,6 +28,11 @@ projects:
       icon: "i-carbon-ibm-watsonx-code-assistant"
 
   JavaScript Ecosystem:
+    - name: "Passkey"
+      link: "https://github.com/NithishK5/passkeys-express"
+      desc: "An innovative Express.js application showcasing the implementation of Web Authentication API (Webauthn) with Passkeys for secure, passwordless authentication in a Dockerized environment."
+      icon: "i-simple-icons-express"
+
     - name: "Robofriends"
       link: "https://github.com/NithishK5/robofriends"
       desc: "A dynamic ReactJS web application RoboFriends, utilizing Create React App for streamlined development, testing, and deployment, within the modern JavaScript ecosystem."
