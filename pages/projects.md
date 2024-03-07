@@ -22,6 +22,11 @@ projects:
       icon: "i-carbon-row-insert"
 
   Python Ecosystem:
+    - name: "Algorithmic_Trading_ML"
+      link: "https://github.com/NithishK5/Algorithmic_Trading_ML"
+      desc: "Exploring financial market opportunities through innovative machine learning-driven algorithmic trading strategies, from unsupervised asset clustering and sentiment analysis to advanced volatility forecasting."
+      icon: "i-simple-icons-jupyter"
+
     - name: "VirtualAssistant.ai"
       link: "https://github.com/NithishK5/VirtualAssistant.ai"
       desc: "This Python script establishes a basic voice-controlled assistant named Mia. Utilizing speech recognition, it processes voice commands to perform tasks like playing music on YouTube or informing about the current time."
