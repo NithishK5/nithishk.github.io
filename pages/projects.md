@@ -75,6 +75,11 @@ projects:
       icon: "i-simple-icons-javascript"
 
   Websites:
+    - name: "BlackVox Website"
+      link: "https://github.com/NithishK5/BlackVox.ai"
+      desc: "BlackVox.ai company portfolio website, built with Vue.js and Vite, featuring a clean, responsive design and a variety of projects."
+      icon: "i-simple-icons-vite"
+
     - name: "Portfolio"
       link: "https://github.com/NithishK5/nithishk.github.io"
       desc: "My personal portfolio website, built with Vue.js and Vite, featuring a clean, responsive design and a variety of projects."
