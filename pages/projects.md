@@ -38,6 +38,11 @@ projects:
       desc: "An innovative Express.js application showcasing the implementation of Web Authentication API (Webauthn) with Passkeys for secure, passwordless authentication in a Dockerized environment."
       icon: "i-simple-icons-express"
 
+    - name: "Self-Driving-Car-Neural-Networks"
+      link: "https://github.com/NithishK5/Self-Driving-Car-Neural-Networks-and-ML-P-1"
+      desc: "Developed a neural network-driven simulation for a self-driving car in JavaScript from scratch, learning and implementing car mechanics, environment design, sensor simulation, collision detection, and autonomous control inspired by the workings of real neural networks."
+      icon: "i-simple-icons-javascript"
+
     - name: "Robofriends"
       link: "https://github.com/NithishK5/robofriends"
       desc: "A dynamic ReactJS web application RoboFriends, utilizing Create React App for streamlined development, testing, and deployment, within the modern JavaScript ecosystem."
