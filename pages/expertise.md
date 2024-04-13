@@ -49,6 +49,16 @@ projects:
       link: "https://react.dev/"
       desc: "Library for building UIs"
       icon: "i-simple-icons:react"
+
+    - name: "React Native"
+      link: "https://reactnative.dev/docs/getting-started"
+      desc: "Powerful framework for building native mobile apps using JavaScript and React"
+      icon: "i-simple-icons:createreactapp"
+
+    - name: "Expo"
+      link: "https://docs.expo.dev"
+      desc: "Versatile framework that streamlines the development of iOS, Android."
+      icon: "i-simple-icons:expo"
   Data:
     - name: "MySQL"
       link: "https://www.mysql.com/"
