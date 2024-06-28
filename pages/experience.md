@@ -21,7 +21,7 @@ projects:
     - role: "Waiter"
       link: "https://paesanopizza.co.uk/"
       company: "Paesano Pizza"
-      timePeriod: "Sep 22 - Present"
+      timePeriod: "Sep 22 - Jan 24"
       location: "Glasgow, UK"
       icon: "i-simple-icons:proton"
   Education:
