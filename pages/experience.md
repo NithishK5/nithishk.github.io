@@ -29,14 +29,16 @@ projects:
       link: "https://www.monash.edu/study/courses/find-a-course/artificial-intelligence-c6007?international=true"
       company: "Monash University"
       timePeriod: "Mar 25 - Dec 26"
-      location: "Glasgow, UK"
+      location: "Melbourne, Australia"
       icon: "i-ion:university"
+
     - role: "BSc (Hons) Software Engineering"
       link: "https://www.strath.ac.uk/courses/undergraduate/softwareengineering/"
       company: "University of Strathclyde"
       timePeriod: "Sep 19 - Jun 24"
       location: "Glasgow, UK"
       icon: "i-ion:university"
+
     - role: "Foundation Engineering and Sciences"
       link: "https://isc.strath.ac.uk/programmes/undergraduate-foundation"
       company: "University of Strathclyde"
