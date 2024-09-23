@@ -41,42 +41,42 @@
   "node_modules/.pnpm/vue-router-better-scroller@0.0.0_vue-router@4.2.5_vue@3.4.19/node_modules/vue-router-better-scroller/dist/index.mjs": [],
   "node_modules/.pnpm/vue-router@4.2.5_vue@3.4.19/node_modules/vue-router/dist/vue-router.mjs": [],
   "pages/[...404].md": [
-    "/assets/_...404_-BrztD1cN.js"
+    "/assets/_...404_-BDt1Ql8l.js"
   ],
   "pages/experience.md": [
-    "/assets/experience-D8WkJnBg.js",
+    "/assets/experience-DiKXGaMF.js",
     "/assets/experience-BHe0eg9W.css"
   ],
   "pages/expertise.md": [
-    "/assets/expertise-BGAlFwH9.js"
+    "/assets/expertise-BZbDEiq1.js"
   ],
   "pages/index.md": [],
   "pages/projects.md": [
-    "/assets/projects-Jt6vhWGb.js"
+    "/assets/projects-BLuV93d-.js"
   ],
   "src/App.vue?vue&type=script&setup=true&lang.ts": [],
   "src/components/ListExperiences.vue": [
-    "/assets/experience-D8WkJnBg.js",
+    "/assets/experience-DiKXGaMF.js",
     "/assets/experience-BHe0eg9W.css"
   ],
   "src/components/ListExperiences.vue?vue&type=script&setup=true&lang.ts": [
-    "/assets/experience-D8WkJnBg.js",
+    "/assets/experience-DiKXGaMF.js",
     "/assets/experience-BHe0eg9W.css"
   ],
   "src/components/ListExperiences.vue?vue&type=style&index=0&scoped=740d5d97&lang.css": [
-    "/assets/experience-D8WkJnBg.js",
+    "/assets/experience-DiKXGaMF.js",
     "/assets/experience-BHe0eg9W.css"
   ],
   "src/components/ListProjects.vue": [
-    "/assets/ListProjects-Csrk_2Pa.js",
+    "/assets/ListProjects-34JdyeSr.js",
     "/assets/ListProjects-CD5wz2Kz.css"
   ],
   "src/components/ListProjects.vue?vue&type=script&setup=true&lang.ts": [
-    "/assets/ListProjects-Csrk_2Pa.js",
+    "/assets/ListProjects-34JdyeSr.js",
     "/assets/ListProjects-CD5wz2Kz.css"
   ],
   "src/components/ListProjects.vue?vue&type=style&index=0&scoped=1ce4a17f&lang.css": [
-    "/assets/ListProjects-Csrk_2Pa.js",
+    "/assets/ListProjects-34JdyeSr.js",
     "/assets/ListProjects-CD5wz2Kz.css"
   ],
   "src/components/Logo.vue": [],
