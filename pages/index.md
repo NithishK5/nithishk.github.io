@@ -5,9 +5,11 @@ image: https://nithishk/avatar.jpeg
 plum: true
 ---
 
-My earliest memories are entwined with the fascinating world of computers. The sheer power they wielded in simplifying complex tasks sparked a curiosity within my young mind, embarking me on an accelerated journey where I outshone my contemporaries. As the years rolled by, this juvenile curiosity evolved into an inexhaustible quest for understanding, propelling me towards the academic study of Software Engineering. Recognizing the vast potential encapsulated within the domain of computing, I decided to weave my career around this enchanting field.
+From an early age, I’ve been captivated by the endless possibilities that computers offer. What started as a childhood curiosity for how they simplified complex tasks has flourished into a deep, lifelong passion. As I grew, this fascination turned into an unrelenting desire to understand more, motivating me to dive deeper into the world of technology and consistently excel beyond my peers. With every new discovery, I became increasingly drawn to the vast, untapped potential of the digital realm—a potential I knew I had to explore.
 
-Having recently graduated from the prestigious University of Strathclyde with a degree in Software Engineering, I am still driven by my insatiable curiosity, finding profound satisfaction in expanding my understanding of the very technology that ignited my passion. This odyssey, from an intrigued youngster to a passionate professional, shapes my enduring affinity for computers and fuels my aspirations in this vibrant digital universe. This narrative is not merely an 'About Me' for my portfolio, it's a testament to a dream that sprung from a childhood fascination and grew into a promising career pathway.
+After completing my degree in Software Engineering at the prestigious University of Strathclyde in the United Kingdom, my journey is far from over. My passion for innovation continues to drive me, and I am now embarking on the next phase of my academic and professional path: pursuing a master’s in Artificial Intelligence at Monash University in Australia. This step not only reflects my dedication to the field but also symbolizes my commitment to mastering the technology that first ignited my curiosity.
+
+What began as a simple interest has evolved into a powerful motivator for my ambitions. As I continue my journey, I look forward to the challenges and opportunities ahead, eager to make my mark in the ever-changing world of technology.
 
 Find me on
 
