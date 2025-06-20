@@ -2,9 +2,14 @@
 title: Projects - Nithish K Megarajan
 display: Projects
 description: List of projects that I am proud of
-plum: true
 wrapperClass: "text-center"
+plum: true
 projects:
+  # Current Focus:
+  #   - name: "Wanderly"
+  #     link: "https://github.com/antfu/vite-devtools"
+  #     desc: "Inspect the intermediate state of Vite bundle and pipeline"
+  #     icon: "i-simple-icons-vite"
   Java Ecosystem:
     - name: "Boston Metro System"
       link: "https://github.com/NithishK5/BOSTON-METRO-SYSTEM"

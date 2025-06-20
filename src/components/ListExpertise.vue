@@ -8,35 +8,11 @@ function slug(name: string) {
 
 <template>
   <div class="max-w-300 mx-auto">
-    <p text-center mt--6 mb5 op50 text-lg italic>
+    <!-- <p text-center mt--6 mb5 op50 text-lg italic>
       Projects that I created or maintaining.
-    </p>
+    </p> -->
     <div class="prose pb5 mx-auto mt10 text-center">
-      <div flex="~ gap-2 justify-center">
-        <a
-          href="https://github.com/NithishK5"
-          target="_blank"
-          class="group btn-blue inline-block"
-        >
-          <div
-            i-ph-github-logo-duotone
-            group-hover="i-ph-github-logo-fill text-blue"
-          />
-          GitHub
-        </a>
-        <!-- <a
-          href="https://releases.antfu.me"
-          target="_blank"
-          class="group btn-amber inline-block"
-        >
-          <div
-            i-ph-rocket-launch-duotone
-            group-hover="i-ph-rocket-launch-fill text-amber"
-          />
-          Recent Releases
-        </a> -->
-      </div>
-      <hr />
+      <div flex="~ gap-2 justify-center"></div>
     </div>
     <div
       v-for="(key, cidx) in Object.keys(projects)"

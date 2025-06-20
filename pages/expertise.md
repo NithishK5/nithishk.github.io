@@ -123,4 +123,4 @@ projects:
 
 <!-- @layout-full-width -->
 
-<ListProjects :projects="frontmatter.projects" />
+<ListExpertise :projects="frontmatter.projects" />
