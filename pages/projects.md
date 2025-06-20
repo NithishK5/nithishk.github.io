@@ -1,9 +1,9 @@
 ---
-title: Projects - Nithish K Megarajan
+title: Projects - Nithish Kumar Megarajan
 display: Projects
 description: List of projects that I am proud of
-wrapperClass: "text-center"
-plum: true
+wrapperClass: 'text-center'
+art: dots
 projects:
   # Current Focus:
   #   - name: "Wanderly"
@@ -123,5 +123,4 @@ projects:
 ---
 
 <!-- @layout-full-width -->
-
 <ListProjects :projects="frontmatter.projects" />

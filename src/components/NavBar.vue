@@ -2,11 +2,11 @@
 function toTop() {
   window.scrollTo({
     top: 0,
-    behavior: "smooth",
-  });
+    behavior: 'smooth',
+  })
 }
 
-const { y: scroll } = useWindowScroll();
+const { y: scroll } = useWindowScroll()
 </script>
 
 <template>
@@ -20,18 +20,8 @@ const { y: scroll } = useWindowScroll();
     </RouterLink>
     <button
       title="Scroll to top"
-      fixed
-      right-3
-      bottom-3
-      w-10
-      h-10
-      hover:op100
-      rounded-full
-      hover-bg-hex-8883
-      transition
-      duration-300
-      z-100
-      print:hidden
+      fixed right-3 bottom-3 w-10 h-10 hover:op100 rounded-full
+      hover-bg-hex-8883 transition duration-300 z-100 print:hidden
       :class="scroll > 300 ? 'op30' : 'op0! pointer-events-none'"
       @click="toTop()"
     >
@@ -40,6 +30,14 @@ const { y: scroll } = useWindowScroll();
     <nav class="nav">
       <div class="spacer" />
       <div class="right" print:op0>
+        <RouterLink to="/posts" title="Blog">
+          <span class="lt-md:hidden">Blog</span>
+          <div i-ri-article-line md:hidden />
+        </RouterLink>
+        <RouterLink to="/projects" title="Projects">
+          <span class="lt-md:hidden">Projects</span>
+          <div i-ri-lightbulb-line class="md:hidden" />
+        </RouterLink>
         <RouterLink to="/experience" title="Experience">
           <span class="lt-md:hidden">Experience</span>
           <div i-material-symbols:contact-page-outline class="md:hidden" />
@@ -48,20 +46,14 @@ const { y: scroll } = useWindowScroll();
           <span class="lt-md:hidden">Expertise</span>
           <div i-material-symbols:work-outline class="md:hidden" />
         </RouterLink>
-        <RouterLink to="/projects" title="Projects">
-          <span class="lt-md:hidden">Projects</span>
-          <div i-ri-lightbulb-line class="md:hidden" />
-        </RouterLink>
-        <RouterLink to="/posts" title="Blog">
-          <span class="lt-md:hidden">Blog</span>
-          <div i-ri-article-line md:hidden />
-        </RouterLink>
-        <a
-          href="https://github.com/NithishK5"
-          target="_blank"
-          title="GitHub"
-          class="lt-md:hidden"
-        >
+
+        <!-- <RouterLink to="/demos" title="Demos">
+          <div i-ri-screenshot-line />
+        </RouterLink> -->
+        <!-- <RouterLink to="/chat" title="Let's Chat">
+          <div i-ri-chat-1-line />
+        </RouterLink> -->
+        <a href="https://github.com/NithishK5" target="_blank" title="GitHub" class="lt-md:hidden">
           <div i-uil-github-alt />
         </a>
         <a
@@ -83,7 +75,6 @@ const { y: scroll } = useWindowScroll();
           <div i-uil-file-alt />
           <!-- Assuming you have an icon for the resume -->
         </a>
-
         <ToggleTheme />
       </div>
     </nav>

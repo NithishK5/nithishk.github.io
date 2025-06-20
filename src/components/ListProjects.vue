@@ -1,8 +1,8 @@
 <script setup lang="ts">
-defineProps<{ projects: Record<string, any[]> }>();
+defineProps<{ projects: Record<string, any[]> }>()
 
 function slug(name: string) {
-  return name.toLowerCase().replace(/[\s\\/]+/g, "-");
+  return name.toLowerCase().replace(/[\s\\/]+/g, '-')
 }
 </script>
 
@@ -36,48 +36,28 @@ function slug(name: string) {
           Recent Releases
         </a> -->
       </div>
-      <hr />
+      <hr>
     </div>
     <div
-      v-for="(key, cidx) in Object.keys(projects)"
-      :key="key"
-      slide-enter
+      v-for="key, cidx in Object.keys(projects)" :key="key" slide-enter
       :style="{ '--enter-stage': cidx + 1 }"
     >
       <div
         :id="slug(key)"
-        select-none
-        relative
-        h18
-        mt5
-        pointer-events-none
-        slide-enter
+        select-none relative h18 mt5 pointer-events-none slide-enter
         :style="{
           '--enter-stage': cidx - 2,
           '--enter-step': '60ms',
         }"
       >
-        <span
-          text-5em
-          color-transparent
-          absolute
-          left--1rem
-          top-0rem
-          font-bold
-          leading-1em
-          text-stroke-1.5
-          text-stroke-hex-aaa
-          op35
-          dark:op20
-          >{{ key }}</span
-        >
+        <span text-5em color-transparent absolute left--1rem top-0rem font-bold leading-1em text-stroke-1.5 text-stroke-hex-aaa op35 dark:op20>{{ key }}</span>
       </div>
       <div
         class="project-grid py-2 max-w-500 w-max mx-auto"
         grid="~ cols-1 md:cols-2 gap-4 lg:cols-3"
       >
         <a
-          v-for="(item, idx) in projects[key]"
+          v-for="item, idx in projects[key]"
           :key="idx"
           class="item relative flex items-center"
           :href="item.link"
@@ -86,46 +66,28 @@ function slug(name: string) {
         >
           <div v-if="item.icon" class="pt-2 pr-5">
             <Slidev v-if="item.icon === 'slidev'" class="text-4xl opacity-50" />
-            <VueUse
-              v-else-if="item.icon === 'vueuse'"
-              class="text-4xl opacity-50"
-            />
-            <VueReactivity
-              v-else-if="item.icon === 'vue-reactivity'"
-              class="text-4xl opacity-50"
-            />
-            <VueDemi
-              v-else-if="item.icon === 'vue-demi'"
-              class="text-4xl opacity-50"
-            />
-            <Unocss
-              v-else-if="item.icon === 'unocss'"
-              class="text-4xl opacity-50"
-            />
-            <Vitest
-              v-else-if="item.icon === 'vitest'"
-              class="text-4xl opacity-50"
-            />
+            <VueUse v-else-if="item.icon === 'vueuse'" class="text-4xl opacity-50" />
+            <VueReactivity v-else-if="item.icon === 'vue-reactivity'" class="text-4xl opacity-50" />
+            <VueDemi v-else-if="item.icon === 'vue-demi'" class="text-4xl opacity-50" />
+            <Unocss v-else-if="item.icon === 'unocss'" class="text-4xl opacity-50" />
+            <Vitest v-else-if="item.icon === 'vitest'" class="text-4xl opacity-50" />
             <Elk v-else-if="item.icon === 'elk'" class="text-4xl opacity-50" />
-            <AnthonyFu
-              v-else-if="item.icon === 'af'"
-              class="text-4xl opacity-50"
-            />
-            <div
-              v-else
-              class="text-3xl opacity-50"
-              :class="item.icon || 'i-carbon-unknown'"
-            />
+            <AnthonyFu v-else-if="item.icon === 'af'" class="text-4xl opacity-50" />
+            <div v-else class="text-3xl opacity-50" :class="item.icon || 'i-carbon-unknown'" />
           </div>
           <div class="flex-auto">
             <div class="text-normal">{{ item.name }}</div>
-            <div
-              class="desc text-sm opacity-50 font-normal"
-              v-html="item.desc"
-            />
+            <div class="desc text-sm opacity-50 font-normal" v-html="item.desc" />
           </div>
         </a>
       </div>
+    </div>
+    <div class="prose pb5 mx-auto mt10 text-center">
+      <!-- <div block mt-5>
+        <a href="https://antfu.me/stars-rank" target="_blank" op50>All projects sort by Stars</a>
+      </div> -->
+      <hr>
+      <SponsorButtons />
     </div>
   </div>
   <div>

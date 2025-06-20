@@ -13,7 +13,7 @@ export function slugify(str: string): string {
       .replace(rControl, '')
       // Replace special characters
       .replace(rSpecial, '-')
-      // Remove continuous separators
+      // Remove continuos separators
       .replace(/-{2,}/g, '-')
       // Remove prefixing and trailing separtors
       .replace(/^-+|-+$/g, '')

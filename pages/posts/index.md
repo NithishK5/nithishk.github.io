@@ -1,7 +1,7 @@
 ---
 title: Blog - Nithish Kumar Megarajan
 display: ""
-plum: true
+art: plum
 ---
 
 <SubNav />

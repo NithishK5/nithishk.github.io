@@ -11,16 +11,16 @@ development: true
 
 **Weava.ai** is a new kind of AI email assistant — not one that suggests drafts or filters spam — but one that actually **thinks, replies, and organizes your inbox** for you.
 
-Inspired by real email burnout, the app introduces a calm, decision-free interface we call **Inbox Zen View**:  
-📥 **To Read** | ✅ **Handled** | 🚫 **Ignored**  
+Inspired by real email burnout, the app introduces a calm, decision-free interface we call **Inbox Zen View**:
+📥 **To Read** | ✅ **Handled** | 🚫 **Ignored**
 Each section is powered by AI and updated in real time.
 
 ---
 
 ## 🧠 Why Weava.ai?
 
-Because Gmail, Outlook, and iCloud all have “smart suggestions”…  
-But no one **actually handles the inbox** for you.  
+Because Gmail, Outlook, and iCloud all have “smart suggestions”…
+But no one **actually handles the inbox** for you.
 Weava does.
 
 - It connects to all your email accounts

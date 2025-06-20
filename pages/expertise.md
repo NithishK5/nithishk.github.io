@@ -2,7 +2,7 @@
 title: Expertise - Nithish K Megarajan
 display: Expertise
 description: My career path and education
-plum: true
+art: dots
 wrapperClass: "text-center"
 # cspell:disable
 projects:

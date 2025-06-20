@@ -1,8 +1,8 @@
 <script setup lang="ts">
-defineProps<{ projects: Record<string, any[]> }>();
+defineProps<{ projects: Record<string, any[]> }>()
 
 function slug(name: string) {
-  return name.toLowerCase().replace(/[\s\\/]+/g, "-");
+  return name.toLowerCase().replace(/[\s\\/]+/g, '-')
 }
 </script>
 
@@ -12,7 +12,7 @@ function slug(name: string) {
       Projects that I created or maintaining.
     </p> -->
     <div class="prose pb5 mx-auto mt10 text-center">
-      <div flex="~ gap-2 justify-center"></div>
+      <div flex="~ gap-2 justify-center" />
     </div>
     <div
       v-for="(key, cidx) in Object.keys(projects)"
@@ -45,8 +45,7 @@ function slug(name: string) {
           text-stroke-hex-aaa
           op35
           dark:op20
-          >{{ key }}</span
-        >
+        >{{ key }}</span>
       </div>
       <div
         class="project-grid py-2 max-w-500 w-max mx-auto"

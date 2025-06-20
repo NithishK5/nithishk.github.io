@@ -1,7 +1,7 @@
 ---
 title: Notes - Nithish Kumar Megarajan
-plum: true
-display: ""
+art: plum
+display: ''
 ---
 
 <SubNav />

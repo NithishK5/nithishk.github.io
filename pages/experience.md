@@ -2,7 +2,7 @@
 title: Experience - Nithish K Megarajan
 display: Experience
 description: My career path and education
-plum: true
+art: plum
 wrapperClass: "text-center"
 projects:
   Work Experience:

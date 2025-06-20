@@ -1,22 +1,33 @@
 ---
 title: Nithish Kumar Megarajan
-description: Nithish Kumar's Portfolio
+description: Nithish Kumar Megarajan's Portfolio
 image: https://nithishk/avatar.jpeg
-plum: true
+art: random
 ---
 
-From an early age, I’ve been captivated by the endless possibilities that computers offer. What started as a childhood curiosity for how they simplified complex tasks has flourished into a deep, lifelong passion. As I grew, this fascination turned into an unrelenting desire to understand more, motivating me to dive deeper into the world of technology and consistently excel beyond my peers. With every new discovery, I became increasingly drawn to the vast, untapped potential of the digital realm a potential I knew I had to explore.
+Hey! I’m Nithish Kumar Megarajan, a future-focused engineer with a passion for AI, clean design, and making ambitious things real.
 
-After completing my degree in Software Engineering at the prestigious University of Strathclyde in the United Kingdom, my journey is far from over. My passion for innovation continues to drive me, and I am now embarking on the next phase of my academic and professional path pursuing a master’s in Artificial Intelligence at Monash University in Australia. This step not only reflects my dedication to the field but also symbolizes my commitment to mastering the technology that first ignited my curiosity.
+Graduated from the University of Strathclyde, UK 🇬🇧
+Currently pursuing my Master’s in Artificial Intelligence at Monash University, Australia 🇦🇺
+Creating tools, interfaces, and moments that feel like magic.
 
-What began as a simple interest has evolved into a powerful motivator for my ambitions. As I continue my journey, I look forward to the challenges and opportunities ahead, eager to make my mark in the ever-changing world of technology.
+I’m driven by a curiosity to understand the world and reshape how people interact with tech. I enjoy crafting smooth user experiences, automating boring things, and diving deep into systems thinking.
+
+You can find my [projects here](/projects) and [posts here](/posts).
+More recently, I’ve been exploring AI productivity tools, startup ideas that scale, and how design can empower daily utility.
+
+Outside of code, I lift, I explore cities, and I obsess over productivity, aesthetics, and food that slaps. 🍜
+If you’re in Melbourne and down to chat AI, apps or espresso hit me up.
+
+<div flex-auto />
+
+---
 
 Find me on
 
-<p flex="~ gap-3 wrap" class="mt--2!">
+<p flex="~ gap-2 wrap" class="mt--2!">
   <a href="https://github.com/NithishK5" target="_blank"><span op75 i-simple-icons-github /> GitHub</a>
-  <a href="https://www.linkedin.com/in/nithish-kumar-megarajan-2a17b31b4/" target="_blank"><span op75 i-simple-icons-linkedin/> LinkedIn</a>
-  <a href="mailto:nithishkmegaraj05@gmail.com" class="mail-send">
-          <div span op75 i-simple-icons-gmail /> Gmail
-        </a>
+  <a href="https://x.com/NITHISH_5" target="_blank"><span op75 i-ri-twitter-x-fill /></a>
 </p>
+
+Or mail me at <span font-mono>nithishkmegaraj05<span i-carbon-at/>gmail.com</span>
