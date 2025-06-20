@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://nithishk.com/</id>
+    <title>Nithish Kumar Megarajan</title>
+    <updated>2025-06-20T08:53:31.203Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <author>
+        <name>Nithish Kumar Megarajan</name>
+        <email>nithishkmegaraj05@gmail.com</email>
+        <uri>https://nithishk.com</uri>
+    </author>
+    <link rel="alternate" href="https://nithishk.com/"/>
+    <link rel="self" href="https://nithishk.com/feed.atom"/>
+    <subtitle>Nithish's Website</subtitle>
+    <logo>https://nithishk.com/avatar.jpeg</logo>
+    <icon>https://nithishk.com/logo.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Inbox, Handled – Building Weava.ai, an AI Email Assistant]]></title>
+        <id>https://nithishk.com/posts/weava</id>
+        <link href="https://nithishk.com/posts/weava"/>
+        <updated>2025-06-20T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Building Weava.ai – an AI-powered multi-inbox assistant that reads, replies, and organizes your email while you focus on real work.]]></summary>
+        <content type="html"><![CDATA[<p><strong><a href="http://Weava.ai">Weava.ai</a></strong> is a new kind of AI email assistant — not one that suggests drafts or filters spam — but one that actually <strong>thinks, replies, and organizes your inbox</strong> for you.</p>
+<p>Inspired by real email burnout, the app introduces a calm, decision-free interface we call <strong>Inbox Zen View</strong>:<br>
+📥 <strong>To Read</strong> | ✅ <strong>Handled</strong> | 🚫 <strong>Ignored</strong><br>
+Each section is powered by AI and updated in real time.</p>
+<hr>
+<h2>🧠 Why <a href="http://Weava.ai">Weava.ai</a>?</h2>
+<p>Because Gmail, Outlook, and iCloud all have “smart suggestions”…<br>
+But no one <strong>actually handles the inbox</strong> for you.<br>
+Weava does.</p>
+<ul>
+<li>It connects to all your email accounts</li>
+<li>Understands which emails are urgent, ignorable, or routine</li>
+<li><strong>Replies automatically</strong> to known cases using your tone</li>
+<li>And sends you a <strong>daily digest</strong> of what it did (including updated calendars)</li>
+</ul>
+<hr>
+<h2>🔨 Phase 1 – Building the Brain</h2>
+<p>This first development phase is all about the backend logic:</p>
+<ul>
+<li>Ingesting raw email content</li>
+<li>Running AI summarization + classification</li>
+<li>Drafting or auto-sending replies</li>
+<li>Storing all data for UI rendering</li>
+</ul>
+<hr>
+<h2>🔁 What AI Does in Phase 1</h2>
+<ol>
+<li><strong>Reads</strong> the email body + metadata</li>
+<li><strong>Summarizes</strong> the content</li>
+<li><strong>Classifies</strong> it as:
+<ul>
+<li><code>To Read</code> – human should read</li>
+<li><code>Handled</code> – AI replied/archived</li>
+<li><code>Ignored</code> – newsletters, spam, FYIs</li>
+</ul>
+</li>
+<li><strong>Replies</strong> with context-aware, tone-matched text</li>
+<li><strong>Logs</strong> the reply + updates your calendar if needed</li>
+</ol>
+<hr>
+<h2>✨ Sample Prompt Used in Phase 1</h2>
+<pre><code class="language-txt">You are an AI email assistant.
+Your job is to:
+1. Classify this email into one of: To Read, Handled, Ignored
+2. Provide a one-line summary
+3. Suggest a short, polite reply
+
+Email Subject: &quot;Following up on the proposal&quot;
+Email Body: &quot;Hi! Just checking in to see if you had a chance to review the pitch I sent last week.&quot;
+</code></pre>
+<h2>✨ Sample Output in Phase 1</h2>
+<pre><code class="language-json">{
+  &quot;category&quot;: &quot;To Read&quot;,
+  &quot;summary&quot;: &quot;Client is following up on last week's proposal.&quot;,
+  &quot;reply&quot;: &quot;Thanks for the follow-up! I’ll take a look and get back to you by today.&quot;
+}
+</code></pre>
+]]></content>
+        <author>
+            <name>Nithish Kumar Megarajan</name>
+            <email>nithishkmegaraj05@gmail.com</email>
+            <uri>https://nithishk.com</uri>
+        </author>
+    </entry>
+</feed>
