@@ -2,11 +2,11 @@
 function toTop() {
   window.scrollTo({
     top: 0,
-    behavior: 'smooth',
-  })
+    behavior: "smooth",
+  });
 }
 
-const { y: scroll } = useWindowScroll()
+const { y: scroll } = useWindowScroll();
 </script>
 
 <template>
@@ -20,8 +20,18 @@ const { y: scroll } = useWindowScroll()
     </RouterLink>
     <button
       title="Scroll to top"
-      fixed right-3 bottom-3 w-10 h-10 hover:op100 rounded-full
-      hover-bg-hex-8883 transition duration-300 z-100 print:hidden
+      fixed
+      right-3
+      bottom-3
+      w-10
+      h-10
+      hover:op100
+      rounded-full
+      hover-bg-hex-8883
+      transition
+      duration-300
+      z-100
+      print:hidden
       :class="scroll > 300 ? 'op30' : 'op0! pointer-events-none'"
       @click="toTop()"
     >
@@ -42,17 +52,36 @@ const { y: scroll } = useWindowScroll()
           <span class="lt-md:hidden">Projects</span>
           <div i-ri-lightbulb-line class="md:hidden" />
         </RouterLink>
-        <a href="https://github.com/NithishK5" target="_blank" title="GitHub" class="lt-md:hidden">
+        <RouterLink to="/posts" title="Blog">
+          <span class="lt-md:hidden">Blog</span>
+          <div i-ri-article-line md:hidden />
+        </RouterLink>
+        <a
+          href="https://github.com/NithishK5"
+          target="_blank"
+          title="GitHub"
+          class="lt-md:hidden"
+        >
           <div i-uil-github-alt />
         </a>
-        <a href="https://www.linkedin.com/in/nithish-kumar-megarajan-2a17b31b4/" target="_blank" title="Linkedin" class="lt-md:hidden">
+        <a
+          href="https://www.linkedin.com/in/nithish-kumar-megarajan-2a17b31b4/"
+          target="_blank"
+          title="Linkedin"
+          class="lt-md:hidden"
+        >
           <div i-uil-linkedin-alt />
         </a>
-        <a href="mailto:nithishkmegaraj05@gmail.com" title="Gmail" class="mail-send">
+        <a
+          href="mailto:nithishkmegaraj05@gmail.com"
+          title="Gmail"
+          class="mail-send"
+        >
           <div span op75 i-simple-icons-gmail />
         </a>
         <a href="/CV.pdf" target="_blank" title="Resume" class="lt-md:hidden">
-          <div i-uil-file-alt /> <!-- Assuming you have an icon for the resume -->
+          <div i-uil-file-alt />
+          <!-- Assuming you have an icon for the resume -->
         </a>
 
         <ToggleTheme />
