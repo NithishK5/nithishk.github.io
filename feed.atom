@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://nithishk.com/</id>
     <title>Nithish Kumar Megarajan</title>
-    <updated>2025-06-20T08:53:31.203Z</updated>
+    <updated>2025-08-19T05:24:07.855Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <author>
         <name>Nithish Kumar Megarajan</name>
@@ -14,6 +14,200 @@
     <subtitle>Nithish's Website</subtitle>
     <logo>https://nithishk.com/avatar.jpeg</logo>
     <icon>https://nithishk.com/logo.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Pac-Man, Optimally — Heuristics, Search & Engineering Notes from FIT5047 A1]]></title>
+        <id>https://nithishk.com/posts/pacman</id>
+        <link href="https://nithishk.com/posts/pacman"/>
+        <updated>2025-08-19T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[What I built and learned while implementing A* search, heuristics, and score-maximizing strategies for the FIT5047 Pac-Man assignment (Q1a–Q1c).]]></summary>
+        <content type="html"><![CDATA[<p>I’ve been working through <strong>FIT5047 — Assignment 1: Search</strong>.<br>
+It looks like a toy game; it isn’t. It’s a tight exercise in <em>problem modeling, admissible heuristics, and engineering discipline</em> under timeouts.</p>
+<p>Below is a engineering-oriented write-up of how I approached <strong>Q1a (single dot)</strong>, <strong>Q1b (reach any one of many dots)</strong>, and <strong>Q1c (maximize score with many dots)</strong> — plus what I learned.</p>
+<hr>
+<h2>TL;DR</h2>
+<ul>
+<li><strong>Optimal pathfinding:</strong> A* with <strong>Manhattan</strong> on unit grids + a clean stale-entry guard + <code>(f, h)</code> tie-break.</li>
+<li><strong>Reach any dot efficiently:</strong> A* with a <strong>perfect nearest-food heuristic</strong> from a <strong>multi-source BFS</strong> precompute (exact maze distance to the nearest dot for every cell).</li>
+<li><strong>Maximize score with many dots:</strong> A layered planner:
+<ol>
+<li><strong>Greedy with 3-step lookahead</strong> (walls-aware distances),</li>
+<li><strong>Exact finisher</strong> (Held–Karp DP over maze distances) when few dots remain,</li>
+<li><strong>Robust fallback</strong>: state-space <strong>A*</strong> using a <strong>maze-distance MST heuristic</strong>.</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h2>Project Shape</h2>
+<p>The codebase separates <strong>problem modeling</strong> from <strong>algorithms</strong>:</p>
+<ul>
+<li><code>problems/*.py</code> → <code>getStartState()</code>, <code>isGoalState(state)</code>, <code>getSuccessors(state)</code></li>
+<li><code>solvers/*.py</code> → returns a <strong>list of Directions</strong> (the plan)</li>
+</ul>
+<p>This lets me iterate on heuristics and strategies without touching environment code.</p>
+<hr>
+<h2>Core Ideas &amp; How They Work</h2>
+<h3>1) Optimal point-to-point paths (single target)</h3>
+<ul>
+<li><strong>State:</strong> <code>(x, y)</code></li>
+<li><strong>Moves:</strong> N/S/E/W, cost = 1</li>
+<li><strong>Heuristic:</strong> <code>h = Manhattan</code> (admissible &amp; consistent on unit grids)</li>
+</ul>
+<p><strong>A*</strong> essentials</p>
+<ul>
+<li>Priority <code>f = g + h</code></li>
+<li><strong>Stale-entry guard</strong> so outdated PQ entries don’t cause extra expansions:<pre><code class="language-python">state, g = frontier.pop()
+if g != best_g.get(state, float(&quot;inf&quot;)):
+    continue
+</code></pre>
+</li>
+<li><strong>Tie-break</strong> with <code>(f, h)</code> so equal-<code>f</code> nodes with smaller <code>h</code> expand first (plateau trimming).</li>
+</ul>
+<p><strong>Why it works:</strong> Consistent <code>h</code> ⇒ the first goal popped is optimal; the tie-break quietly reduces expansions.</p>
+<hr>
+<h3>2) Reach any one of many dots with minimal expansions</h3>
+<p>Plain Manhattan to the <strong>nearest</strong> dot still expands too much on twisty maps. I precompute the <strong>exact distance to the nearest dot for every cell</strong>:</p>
+<pre><code class="language-python"># Multi-source BFS, seeded by all food cells at distance 0
+dist = [[INF]*H for _ in range(W)]
+Q = Queue()
+for (fx, fy) in foods:
+    dist[fx][fy] = 0
+    Q.push((fx, fy))
+
+while not Q.isEmpty():
+    x, y = Q.pop()
+    for nx, ny in neighbors((x, y)):
+        if dist[nx][ny] &gt; dist[x][y] + 1:
+            dist[nx][ny] = dist[x][y] + 1
+            Q.push((nx, ny))
+</code></pre>
+<p><strong>Heuristic query during A*:</strong><br>
+<code>h(state) = dist[state.x][state.y]</code> → exact nearest-food distance.</p>
+<p>This <code>h</code> is <strong>admissible, consistent, and exact</strong> for “nearest food”. I keep the <code>(f, h)</code> tie-break to reduce plateaus further.</p>
+<p><strong>Why it works:</strong> Precomputation turns heuristic queries into <strong>O(1)</strong> exact answers; expansions drop sharply.</p>
+<hr>
+<h3>3) Maximize score across many dots (10 per dot, −1 per step)</h3>
+<p>This is a <strong>sequencing</strong> problem: eat lots of dots while avoiding long, low-yield treks. I use a <strong>layered planner</strong>:</p>
+<h4>3.1 Midgame — Greedy with <strong>3-step lookahead</strong> (walls-aware)</h4>
+<ul>
+<li>From the current position, run <strong>BFS</strong> → exact maze distances to all cells + parent map.</li>
+<li>Consider top <strong>K₁</strong> nearest dots; for each candidate <code>f₁</code>:
+<ul>
+<li>Estimate the best <code>f₂</code> and <code>f₃</code> using <strong>cached BFS grids</strong> from <code>f₁</code> and <code>f₂</code>.</li>
+<li><strong>Score:</strong><pre><code>(10 - d1)_+ + (10 - d2)_+ + 0.8·(10 - d3)_+ + 0.05·local_density
+</code></pre>
+where <code>local_density</code> = #dots within Manhattan radius 3 around <code>f₁</code> (cluster bias).</li>
+</ul>
+</li>
+<li>Reconstruct the <strong>shortest path</strong> via BFS parents; <strong>consume dots encountered</strong> along the way.</li>
+</ul>
+<h4>3.2 Endgame — <strong>Exact finisher</strong> when few dots remain</h4>
+<ul>
+<li>When remaining dots ≤ <strong>12</strong>, switch to <strong>Held–Karp DP</strong> over <strong>maze distances</strong>:
+<ul>
+<li>Build a pairwise distance matrix between remaining dots using cached BFS grids.</li>
+<li>Run TSP-style <strong>DP</strong> to get the shortest tour; stitch edges back into actions via BFS.</li>
+</ul>
+</li>
+</ul>
+<h4>3.3 Safety net — Full state-space <strong>A*</strong> over <code>(position, food_grid)</code></h4>
+<p>On pathological layouts, the greedy seed can fail (e.g., tight “closed” mazes). I fall back to A* with a <strong>tight, admissible heuristic</strong>:</p>
+<ul>
+<li><code>h = nearest_maze_distance(position → any food) + MST(remaining foods)</code><br>
+where the MST runs on <strong>maze distances</strong> (Prim’s), not Manhattan.</li>
+<li><strong>Neighbors</strong> come from <code>Actions.getLegalNeighbors</code> (engine’s logic) for correctness in quirky passages.</li>
+<li>Maze distances between points are <strong>cached</strong>.</li>
+</ul>
+<p><strong>Why it works:</strong> Greedy + lookahead harvests dense clusters efficiently; the DP <strong>finishes optimally</strong> when small; the A* fallback is <strong>complete</strong> and typically well within the time budget thanks to the tight MST heuristic.</p>
+<hr>
+<h2>Code Snippets (Illustrative)</h2>
+<p><strong>A* scaffold</strong></p>
+<pre><code class="language-python">class AStarData:
+    def __init__(self):
+        self.frontier = util.PriorityQueue()
+        self.best_g   = {}               # state -&gt; g
+        self.parent   = {}               # state -&gt; (prev, action)
+        self.start    = None
+        self.solved   = False
+        self.solution = []
+</code></pre>
+<p><strong>Walls-aware BFS</strong></p>
+<pre><code class="language-python">def bfs_all(start):
+    dist   = [[None]*H for _ in range(W)]
+    parent = {}
+    q = util.Queue()
+    dist[start.x][start.y] = 0
+    q.push(start)
+    while not q.isEmpty():
+        u = q.pop()
+        for v, action in neighbors(u):   # engine-legal neighbors
+            if dist[v.x][v.y] is None:
+                dist[v.x][v.y] = dist[u.x][u.y] + 1
+                parent[v] = (u, action)
+                q.push(v)
+    return dist, parent
+</code></pre>
+<p><strong>Held–Karp DP (exact endgame)</strong></p>
+<pre><code class="language-python"># dp[mask][j] = shortest cost to visit subset 'mask' ending at j
+for mask in range(1&lt;&lt;n):
+    for j in range(n):
+        if mask &amp; (1&lt;&lt;j):
+            # transition to k not in mask using pairwise maze distances
+</code></pre>
+<p><strong>MST heuristic on maze distances (tight &amp; admissible)</strong></p>
+<pre><code class="language-python">def mst_len_maze(points):
+    # Prim's over points with edge weights = maze_dist(a, b) via cached BFS
+    ...
+</code></pre>
+<hr>
+<h2>How I Run It</h2>
+<blockquote>
+<p>Flags vary by template; check <code>python evaluator.py -h</code>.</p>
+</blockquote>
+<p><strong>Single instances</strong></p>
+<pre><code class="language-bash">python pacman.py -l layouts/smallMaze.lay   -p SearchAgent -a fn=solverA,prob=problemA --timeout=1
+python pacman.py -l layouts/someCorners.lay -p SearchAgent -a fn=solverB,prob=problemB --timeout=5
+python pacman.py -l layouts/tinySearch.lay  -p SearchAgent -a fn=solverC,prob=problemC --timeout=10
+</code></pre>
+<p><strong>Local evaluator</strong></p>
+<pre><code class="language-bash">python evaluator.py --q1a --q1b --q1c
+# Pretty tables need: pip install tabulate
+</code></pre>
+<hr>
+<h2>Troubleshooting</h2>
+<ul>
+<li><strong>“layout file cannot be found”</strong> → check name or <code>ls layouts</code>.</li>
+<li><strong><code>util.raiseNotDefined()</code> crash</strong> → a placeholder wasn’t replaced.</li>
+<li><strong>Slow or timeouts</strong>
+<ul>
+<li>Enforce the <strong>stale-entry guard</strong> in A*.</li>
+<li>Cache BFS distance grids from frequently used anchors (food cells).</li>
+<li>Keep lookahead <strong>beam sizes</strong> modest (<code>K1=12, K2=6, K3=3</code>).</li>
+</ul>
+</li>
+<li><strong>Evaluator markdown ImportError</strong> → <code>python -m pip install tabulate</code>.</li>
+</ul>
+<hr>
+<h2>What I Learned</h2>
+<ul>
+<li><strong>Heuristic design is a lever:</strong> admissible + consistent yields correctness guarantees; tightness yields speed.</li>
+<li><strong>Tie-breaks matter:</strong> <code>(f, h)</code> reduces expansions with zero risk.</li>
+<li><strong>Exploit static structure:</strong> on fixed maps, <strong>precompute</strong> (multi-source BFS, cached grids).</li>
+<li><strong>Layered planning:</strong> greedy for speed, DP for optimal finish, A* as a safety net is a pragmatic “meta-planner”.</li>
+<li><strong>Determinism + caching</strong> → predictable, fast runs that play nicely with timeouts.</li>
+</ul>
+<hr>
+<h2>Notes on Publishing</h2>
+<ul>
+<li>I keep course-provided starter code <strong>private</strong>.</li>
+<li>This README contains my own explanations and small illustrative snippets only.</li>
+</ul>
+]]></content>
+        <author>
+            <name>Nithish Kumar Megarajan</name>
+            <email>nithishkmegaraj05@gmail.com</email>
+            <uri>https://nithishk.com</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Inbox, Handled – Building Weava.ai, an AI Email Assistant]]></title>
         <id>https://nithishk.com/posts/weava</id>
