@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://nithishk.com/</id>
     <title>Nithish Kumar Megarajan</title>
-    <updated>2025-08-19T05:24:07.855Z</updated>
+    <updated>2025-08-19T05:34:37.196Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <author>
         <name>Nithish Kumar Megarajan</name>
@@ -24,7 +24,6 @@
 It looks like a toy game; it isn’t. It’s a tight exercise in <em>problem modeling, admissible heuristics, and engineering discipline</em> under timeouts.</p>
 <p>Below is a engineering-oriented write-up of how I approached <strong>Q1a (single dot)</strong>, <strong>Q1b (reach any one of many dots)</strong>, and <strong>Q1c (maximize score with many dots)</strong> — plus what I learned.</p>
 <hr>
-<h2>TL;DR</h2>
 <ul>
 <li><strong>Optimal pathfinding:</strong> A* with <strong>Manhattan</strong> on unit grids + a clean stale-entry guard + <code>(f, h)</code> tie-break.</li>
 <li><strong>Reach any dot efficiently:</strong> A* with a <strong>perfect nearest-food heuristic</strong> from a <strong>multi-source BFS</strong> precompute (exact maze distance to the nearest dot for every cell).</li>
@@ -87,7 +86,7 @@ while not Q.isEmpty():
 <hr>
 <h3>3) Maximize score across many dots (10 per dot, −1 per step)</h3>
 <p>This is a <strong>sequencing</strong> problem: eat lots of dots while avoiding long, low-yield treks. I use a <strong>layered planner</strong>:</p>
-<h4>3.1 Midgame — Greedy with <strong>3-step lookahead</strong> (walls-aware)</h4>
+<h4>3.1 Greedy with <strong>3-step lookahead</strong> (walls-aware)</h4>
 <ul>
 <li>From the current position, run <strong>BFS</strong> → exact maze distances to all cells + parent map.</li>
 <li>Consider top <strong>K₁</strong> nearest dots; for each candidate <code>f₁</code>:
@@ -100,7 +99,7 @@ where <code>local_density</code> = #dots within Manhattan radius 3 around <code>
 </li>
 <li>Reconstruct the <strong>shortest path</strong> via BFS parents; <strong>consume dots encountered</strong> along the way.</li>
 </ul>
-<h4>3.2 Endgame — <strong>Exact finisher</strong> when few dots remain</h4>
+<h4>3.2 <strong>Exact finisher</strong> when few dots remain</h4>
 <ul>
 <li>When remaining dots ≤ <strong>12</strong>, switch to <strong>Held–Karp DP</strong> over <strong>maze distances</strong>:
 <ul>
@@ -146,7 +145,7 @@ where the MST runs on <strong>maze distances</strong> (Prim’s), not Manhattan.
                 q.push(v)
     return dist, parent
 </code></pre>
-<p><strong>Held–Karp DP (exact endgame)</strong></p>
+<p><strong>Held–Karp DP</strong></p>
 <pre><code class="language-python"># dp[mask][j] = shortest cost to visit subset 'mask' ending at j
 for mask in range(1&lt;&lt;n):
     for j in range(n):
@@ -161,7 +160,7 @@ for mask in range(1&lt;&lt;n):
 <hr>
 <h2>How I Run It</h2>
 <blockquote>
-<p>Flags vary by template; check <code>python evaluator.py -h</code>.</p>
+<p>Flags vary by template; check <code>python evaluator.py</code>.</p>
 </blockquote>
 <p><strong>Single instances</strong></p>
 <pre><code class="language-bash">python pacman.py -l layouts/smallMaze.lay   -p SearchAgent -a fn=solverA,prob=problemA --timeout=1

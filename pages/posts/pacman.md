@@ -16,8 +16,6 @@ Below is a engineering-oriented write-up of how I approached **Q1a (single dot)*
 
 ---
 
-## TL;DR
-
 - **Optimal pathfinding:** A\* with **Manhattan** on unit grids + a clean stale-entry guard + `(f, h)` tie-break.
 - **Reach any dot efficiently:** A\* with a **perfect nearest-food heuristic** from a **multi-source BFS** precompute (exact maze distance to the nearest dot for every cell).
 - **Maximize score with many dots:** A layered planner:
@@ -94,7 +92,7 @@ This `h` is **admissible, consistent, and exact** for “nearest food”. I keep
 
 This is a **sequencing** problem: eat lots of dots while avoiding long, low-yield treks. I use a **layered planner**:
 
-#### 3.1 Midgame — Greedy with **3-step lookahead** (walls-aware)
+#### 3.1 Greedy with **3-step lookahead** (walls-aware)
 
 - From the current position, run **BFS** → exact maze distances to all cells + parent map.
 - Consider top **K₁** nearest dots; for each candidate `f₁`:
@@ -106,7 +104,7 @@ This is a **sequencing** problem: eat lots of dots while avoiding long, low-yiel
     where `local_density` = #dots within Manhattan radius 3 around `f₁` (cluster bias).
 - Reconstruct the **shortest path** via BFS parents; **consume dots encountered** along the way.
 
-#### 3.2 Endgame — **Exact finisher** when few dots remain
+#### 3.2 **Exact finisher** when few dots remain
 
 - When remaining dots ≤ **12**, switch to **Held–Karp DP** over **maze distances**:
   - Build a pairwise distance matrix between remaining dots using cached BFS grids.
@@ -159,7 +157,7 @@ def bfs_all(start):
     return dist, parent
 ```
 
-**Held–Karp DP (exact endgame)**
+**Held–Karp DP**
 
 ```python
 # dp[mask][j] = shortest cost to visit subset 'mask' ending at j
@@ -181,7 +179,7 @@ def mst_len_maze(points):
 
 ## How I Run It
 
-> Flags vary by template; check `python evaluator.py -h`.
+> Flags vary by template; check `python evaluator.py`.
 
 **Single instances**
 
