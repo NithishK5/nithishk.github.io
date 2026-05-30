@@ -2,7 +2,7 @@
 title: Projects - Nithish Kumar Megarajan
 display: Projects
 description: List of projects that I am proud of
-wrapperClass: 'text-center'
+wrapperClass: "text-center"
 art: dots
 projects:
   # Current Focus:
@@ -36,6 +36,16 @@ projects:
       link: "https://github.com/NithishK5/VirtualAssistant.ai"
       desc: "This Python script establishes a basic voice-controlled assistant named Mia. Utilizing speech recognition, it processes voice commands to perform tasks like playing music on YouTube or informing about the current time."
       icon: "i-carbon-ibm-watsonx-code-assistant"
+
+    - name: "Recipe Generation and Menu Design"
+      link: "https://github.com/NithishK5/recipe-generation-nlp"
+      desc: "End-to-end NLP project covering RNN seq2seq models with Bahdanau attention, LoRA fine-tuning of T5 and GPT-2, and a RAG-based intelligent menu designer with LLM-as-judge evaluation."
+      icon: "i-simple-icons-jupyter"
+
+    - name: "Multi-Agent Reinforcement Learning Coordination"
+      link: "https://github.com/NithishK5/MARL-Coordination-QLearning"
+      desc: "Tabular Q-learning for two autonomous agents coordinating in a stochastic grid world without communication. Implements expected-value Bellman updates, independent Q-learning, replicator dynamics game-theoretic analysis, and a structural step-penalty experiment across two asymmetric coordination phases."
+      icon: "i-simple-icons-jupyter"
 
   JavaScript Ecosystem:
     - name: "Passkey"
